@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-S1220ETKD3');</script>
+    <!-- End Google Tag Manager -->
     <meta name="description" content="Play free online Mickey Mouse Clubhouse games for kids. Best Disney Junior games featuring Mickey, Minnie, Donald and all their friends in fun preschool adventures.">
     <meta name="keywords" content="Mickey mouse game, Best Mickey mouse game for kids, Free online Mickey mouse game, Disney jr games, Mickey mouse clubhouse games, Preschool games, Disney junior games online, Mickey and friends games, Educational games for toddlers">
     <link rel="canonical" href="https://mickeymouseclubhousegames.online" />
     <title>Mickey Mouse Clubhouse Games | Free Online Disney Junior Games for Kids</title>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S1220ETKD3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-S1220ETKD3');
-    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -53,11 +52,11 @@
         }
         
         .carousel {
-            scrollbar-width: none; /* Firefox */
+            scrollbar-width: none;
         }
         
         .carousel::-webkit-scrollbar {
-            display: none; /* Chrome/Safari */
+            display: none;
         }
         
         .carousel-item {
@@ -102,7 +101,12 @@
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-S1220ETKD3"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <!-- Header -->
     <header class="disney-gradient text-white shadow-lg">
         <div class="container mx-auto px-4 py-6">
@@ -317,22 +321,32 @@
         document.getElementById('current-year').textContent = new Date().getFullYear();
         
         // Simple carousel navigation
-        document.querySelector('.carousel-next').addEventListener('click', function() {
+        document.querySelector('.carousel-next')?.addEventListener('click', function() {
             document.querySelector('.carousel').scrollBy({ left: 300, behavior: 'smooth' });
         });
         
-        document.querySelector('.carousel-prev').addEventListener('click', function() {
+        document.querySelector('.carousel-prev')?.addEventListener('click', function() {
             document.querySelector('.carousel').scrollBy({ left: -300, behavior: 'smooth' });
         });
         
-        // Track game plays in GA
-        document.querySelectorAll('.game-card').forEach(card => {
-            card.addEventListener('click', function() {
-                const gameTitle = this.querySelector('h3').textContent;
-                gtag('event', 'game_click', {
-                    'event_category': 'engagement',
-                    'event_label': gameTitle
+        // Enhanced GA tracking
+        function trackEvent(category, action, label) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', action, {
+                    'event_category': category,
+                    'event_label': label
                 });
+            }
+        }
+
+        // Track page view
+        trackEvent('engagement', 'page_view', document.title);
+        
+        // Track game interactions
+        document.querySelectorAll('.game-card, .category-card').forEach(el => {
+            el.addEventListener('click', function() {
+                const label = this.querySelector('h3')?.textContent || this.textContent.trim();
+                trackEvent('games', 'game_click', label);
             });
         });
     </script>
