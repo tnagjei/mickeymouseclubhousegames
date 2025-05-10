@@ -1,0 +1,17 @@
+# Mickey Mouse Clubhouse Games Online
+> Your destination for free online Mickey Mouse Clubhouse games and a variety of other Disney Junior games, offering fun and educational preschool adventures for kids.
+
+Our platform provides a safe, engaging, and ad-free environment for children to play and learn with their favorite Disney characters like Mickey, Minnie, Donald, and more. All games are accessible directly in the browser without any downloads.
+
+## Core Content
+- [Mickey Mouse Clubhouse Games](https://mickeymouseclubhousegames.online/): A wide selection of interactive and fun games based on the beloved Mickey Mouse Clubhouse series, perfect for preschoolers.
+- [Disney Junior Games](https://mickeymouseclubhousegames.online/): Explore a broader collection of games featuring various Disney Junior characters, themes, and learning activities.
+- [Featured Games](https://mickeymouseclubhousegames.online/): Discover our most popular and newly added games, handpicked for maximum fun and engagement.
+
+## Common Resources
+- [Safe Gaming Practices](https://mickeymouseclubhousegames.online/#safe-gaming-section): Learn about our commitment to providing a secure online experience, including parental information and safety features.
+- [Contact Us](https://mickeymouseclubhousegames.online/contact): Reach out to us for support, feedback, or any inquiries you may have. (Please create a contact page if you don't have one)
+
+## Optional
+- [About Us](https://mickeymouseclubhousegames.online/about): Find out more about our mission to deliver high-quality, free, and enjoyable online gaming experiences for young children. (Please create an about page if you don't have one)
+- [Game Categories](https://mickeymouseclubhousegames.online/#categories): Browse games by different categories like adventure, puzzle, learning, and music. (Linking to your categories section if available)

@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-S1220ETKD3');</script>
-    <!-- End Google Tag Manager -->
-    <meta name="description" content="Play free online Mickey Mouse Clubhouse games for kids. Best Disney Junior games featuring Mickey, Minnie, Donald and all their friends in fun preschool adventures.">
-    <meta name="keywords" content="Mickey mouse game, Best Mickey mouse game for kids, Free online Mickey mouse game, Disney jr games, Mickey mouse clubhouse games, Preschool games, Disney junior games online, Mickey and friends games, Educational games for toddlers">
+    <meta name="description" content="Play free Mickey Mouse games online, including beloved Mickey Mouse Clubhouse adventures! Fun Disney Junior games for kids with Mickey, Minnie, and all their friends.">
+    <meta name="keywords" content="">
     <link rel="canonical" href="https://mickeymouseclubhousegames.online" />
-    <title>Mickey Mouse Clubhouse Games | Free Online Disney Junior Games for Kids</title>
+    <title>Mickey Mouse Games Online | Free Clubhouse Adventures</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S1220ETKD3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-S1220ETKD3');
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -52,11 +53,11 @@
         }
         
         .carousel {
-            scrollbar-width: none;
+            scrollbar-width: none; /* Firefox */
         }
         
         .carousel::-webkit-scrollbar {
-            display: none;
+            display: none; /* Chrome/Safari */
         }
         
         .carousel-item {
@@ -101,16 +102,11 @@
         }
     </style>
 </head>
-<body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-S1220ETKD3"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
+<body class="min-h-screen flex flex-col">
     <!-- Header -->
     <header class="disney-gradient text-white shadow-lg">
         <div class="container mx-auto px-4 py-6">
-            <h1 class="text-3xl md:text-5xl font-bold text-center">Mickey Mouse Clubhouse Games</h1>
+            <h1 class="text-3xl md:text-5xl font-bold text-center">Mickey Mouse Games &amp; Clubhouse Adventures</h1>
             <p class="text-center mt-4 text-xl">Fun, Free Online Games for Preschoolers Featuring Mickey and Friends!</p>
         </div>
     </header>
@@ -121,8 +117,18 @@
         <section class="mb-12">
             <div class="bg-white rounded-xl shadow-lg p-6">
                 <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4">Featured Game: Disney Junior POP</h2>
+                <p class="text-gray-700 mb-4 text-base md:text-lg">
+                    Discover the excitement of Disney Junior POP! This engaging puzzle game is a favorite among our young players, offering a fantastic way for preschoolers to interact with beloved Disney characters. Players will enjoy solving fun challenges, which helps in developing critical thinking and coordination skills. It's a delightful experience within our collection of Disney Junior games.
+                </p>
                 <div class="main-game-container game-border bg-gray-100 rounded-lg overflow-hidden">
-                    <iframe src="https://www.numuki.com/game/disneynow-pop/" frameborder="0" class="w-full h-full" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <iframe src="https://www.numuki.com/game/disneynow-pop/" 
+                        frameborder="0" 
+                        class="w-full h-full" 
+                        allow="autoplay; fullscreen" 
+                        allowfullscreen
+                        sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                        loading="lazy"
+                        title="Disney Junior POP Game"></iframe>
                 </div>
                 <div class="mt-4 flex justify-between items-center">
                     <div>
@@ -136,163 +142,429 @@
             </div>
         </section>
 
-        <!-- Game Carousel -->
-        <section class="mb-12">
-            <div class="bg-white rounded-xl shadow-lg p-6">
-                <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-6">More Disney Junior Games</h2>
-                <div class="relative">
-                    <div class="carousel flex overflow-x-auto space-x-5 pb-4 scroll-snap-type-x-mandatory" style="scroll-snap-type: x mandatory;">
-                        <!-- Game 1 -->
-                        <div class="carousel-item game-card relative">
-                            <div class="carousel-game-container game-border bg-gray-100 rounded-lg overflow-hidden relative">
-                                <iframe src="https://www.numuki.com/game/disney-s-robot-roundup/" frameborder="0" class="w-full h-full" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                                <span class="age-badge">Ages 4+</span>
-                                <button class="play-button bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full shadow-md transition duration-300">
-                                    Play Now
-                                </button>
+            <!-- Game Carousel -->
+            <section id="game-carousel" class="mb-12">
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-6">More Disney Junior Games</h2>
+                    <div class="relative">
+                        <div class="carousel flex overflow-x-auto space-x-5 pb-4 scroll-snap-type-x-mandatory" style="scroll-snap-type: x mandatory;">
+                            <!-- Game 1 -->
+                            <div class="carousel-item game-card relative">
+                                <div class="carousel-game-container game-border bg-gray-100 rounded-lg overflow-hidden relative">
+                                    <div class="absolute inset-0 z-10"></div>
+                                    <iframe src="https://www.numuki.com/game/disney-s-robot-roundup/" 
+                                        frameborder="0" 
+                                        class="w-full h-full" 
+                                        allow="autoplay; fullscreen" 
+                                        allowfullscreen
+                                        sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                                        loading="lazy"
+                                        title="Robot Roundup Game"></iframe>
+                                    <span class="age-badge">Ages 4+</span>
+                                    <button class="play-button bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full shadow-md transition duration-300">
+                                        Play Now
+                                    </button>
+                                </div>
+                                <h3 class="mt-2 font-bold text-lg">Robot Roundup</h3>
+                                <div class="flex items-center text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="text-gray-600 text-sm ml-1">(24)</span>
+                                </div>
                             </div>
-                            <h3 class="mt-2 font-bold text-lg">Robot Roundup</h3>
-                            <div class="flex items-center text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <span class="text-gray-600 text-sm ml-1">(24)</span>
+                            
+                            <!-- Game 2 -->
+                            <div class="carousel-item game-card relative">
+                                <div class="carousel-game-container game-border bg-gray-100 rounded-lg overflow-hidden relative">
+                                    <div class="absolute inset-0 z-10"></div>
+                                    <iframe src="https://www.numuki.com/game/disney-moment-maker/" 
+                                        frameborder="0" 
+                                        class="w-full h-full" 
+                                        allow="autoplay; fullscreen" 
+                                        allowfullscreen
+                                        sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                                        loading="lazy"
+                                        title="Moment Maker Game"></iframe>
+                                    <span class="age-badge">Ages 3+</span>
+                                    <button class="play-button bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full shadow-md transition duration-300">
+                                        Play Now
+                                    </button>
+                                </div>
+                                <h3 class="mt-2 font-bold text-lg">Moment Maker</h3>
+                                <div class="flex items-center text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span class="text-gray-600 text-sm ml-1">(18)</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Game 3 -->
+                            <div class="carousel-item game-card relative">
+                                <div class="carousel-game-container game-border bg-gray-100 rounded-lg overflow-hidden relative">
+                                    <div class="absolute inset-0 z-10"></div>
+                                    <iframe src="https://www.numuki.com/game/disney-super-arcade/" 
+                                        frameborder="0" 
+                                        class="w-full h-full" 
+                                        allow="autoplay; fullscreen" 
+                                        allowfullscreen
+                                        sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                                        loading="lazy"
+                                        title="Super Arcade Game"></iframe>
+                                    <span class="age-badge">Ages 5+</span>
+                                    <button class="play-button bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full shadow-md transition duration-300">
+                                        Play Now
+                                    </button>
+                                </div>
+                                <h3 class="mt-2 font-bold text-lg">Super Arcade</h3>
+                                <div class="flex items-center text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="text-gray-600 text-sm ml-1">(32)</span>
+                                </div>
                             </div>
                         </div>
                         
-                        <!-- Game 2 -->
-                        <div class="carousel-item game-card relative">
-                            <div class="carousel-game-container game-border bg-gray-100 rounded-lg overflow-hidden relative">
-                                <iframe src="https://www.numuki.com/game/disney-moment-maker/" frameborder="0" class="w-full h-full" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                                <span class="age-badge">Ages 3+</span>
-                                <button class="play-button bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full shadow-md transition duration-300">
-                                    Play Now
-                                </button>
-                            </div>
-                            <h3 class="mt-2 font-bold text-lg">Moment Maker</h3>
-                            <div class="flex items-center text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <span class="text-gray-600 text-sm ml-1">(18)</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Game 3 -->
-                        <div class="carousel-item game-card relative">
-                            <div class="carousel-game-container game-border bg-gray-100 rounded-lg overflow-hidden relative">
-                                <iframe src="https://www.numuki.com/game/disney-super-arcade/" frameborder="0" class="w-full h-full" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                                <span class="age-badge">Ages 5+</span>
-                                <button class="play-button bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full shadow-md transition duration-300">
-                                    Play Now
-                                </button>
-                            </div>
-                            <h3 class="mt-2 font-bold text-lg">Super Arcade</h3>
-                            <div class="flex items-center text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span class="text-gray-600 text-sm ml-1">(32)</span>
-                            </div>
-                        </div>
+                        <!-- Navigation Arrows -->
+                        <button class="carousel-prev absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 z-10 hidden md:block">
+                            <i class="fas fa-chevron-left text-gray-700"></i>
+                        </button>
+                        <button class="carousel-next absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 z-10 hidden md:block">
+                            <i class="fas fa-chevron-right text-gray-700"></i>
+                        </button>
                     </div>
-                    
-                    <!-- Navigation Arrows -->
-                    <button class="carousel-prev absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 z-10 hidden md:block">
-                        <i class="fas fa-chevron-left text-gray-700"></i>
-                    </button>
-                    <button class="carousel-next absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 z-10 hidden md:block">
-                        <i class="fas fa-chevron-right text-gray-700"></i>
-                    </button>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Game Categories -->
-        <section class="mb-12">
-            <div class="bg-white rounded-xl shadow-lg p-6">
-                <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-6">Browse by Category</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <a href="#" class="category-card bg-blue-50 hover:bg-blue-100 rounded-lg p-4 text-center transition duration-300 border border-blue-100">
-                        <div class="text-blue-600 mb-2">
-                            <i class="fas fa-mouse-pointer text-3xl"></i>
-                        </div>
-                        <h3 class="font-bold">Adventure</h3>
-                        <p class="text-sm text-gray-600">12 games</p>
-                    </a>
-                    <a href="#" class="category-card bg-green-50 hover:bg-green-100 rounded-lg p-4 text-center transition duration-300 border border-green-100">
-                        <div class="text-green-600 mb-2">
-                            <i class="fas fa-puzzle-piece text-3xl"></i>
-                        </div>
-                        <h3 class="font-bold">Puzzles</h3>
-                        <p class="text-sm text-gray-600">8 games</p>
-                    </a>
-                    <a href="#" class="category-card bg-yellow-50 hover:bg-yellow-100 rounded-lg p-4 text-center transition duration-300 border border-yellow-100">
-                        <div class="text-yellow-600 mb-2">
-                            <i class="fas fa-music text-3xl"></i>
-                        </div>
-                        <h3 class="font-bold">Music</h3>
-                        <p class="text-sm text-gray-600">5 games</p>
-                    </a>
-                    <a href="#" class="category-card bg-red-50 hover:bg-red-100 rounded-lg p-4 text-center transition duration-300 border border-red-100">
-                        <div class="text-red-600 mb-2">
-                            <i class="fas fa-graduation-cap text-3xl"></i>
-                        </div>
-                        <h3 class="font-bold">Learning</h3>
-                        <p class="text-sm text-gray-600">15 games</p>
-                    </a>
+            <!-- What are Mickey Mouse Clubhouse Games? -->
+            <section id="what-are-games" class="mb-12">
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                    <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4 text-center">What are Mickey Mouse Clubhouse Games?</h2>
+                    <div class="text-gray-700 space-y-4 text-base md:text-lg">
+                        <p>
+                            Mickey Mouse Clubhouse games are interactive online experiences designed primarily for preschoolers and young children. Inspired by the beloved Disney Junior TV show, these games feature Mickey Mouse, Minnie Mouse, Donald Duck, Goofy, Pluto, and other familiar characters.
+                        </p>
+                        <p>
+                            Players can join their favorite characters in a variety of fun and educational activities. These often include:
+                        </p>
+                        <ul class="list-disc list-inside pl-4 space-y-2">
+                            <li><strong class="font-semibold">Problem-Solving Adventures:</strong> Helping Mickey and friends overcome challenges using "Mouseketools."</li>
+                            <li><strong class="font-semibold">Learning Basic Concepts:</strong> Games that introduce numbers, letters, shapes, colors, and simple logic.</li>
+                            <li><strong class="font-semibold">Creative Play:</strong> Activities like coloring, music-making, or decorating.</li>
+                            <li><strong class="font-semibold">Interactive Storytelling:</strong> Engaging narratives where players can influence the outcome.</li>
+                        </ul>
+                        <p>
+                            Our collection brings these delightful experiences directly to your browser, offering a safe and engaging way for kids to play and learn with their Disney pals.
+                        </p>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Parent Info -->
-        <section>
-            <div class="bg-white rounded-xl shadow-lg p-6">
-                <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4">Safe Gaming for Kids</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <h3 class="font-bold text-xl text-blue-700 mb-3"><i class="fas fa-shield-alt mr-2"></i>Parental Controls</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <span class="bg-blue-100 text-blue-700 rounded-full p-1 mr-3 flex-shrink-0"><i class="fas fa-check w-4 h-4"></i></span>
-                                <span>Timer settings to limit play sessions</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="bg-blue-100 text-blue-700 rounded-full p-1 mr-3 flex-shrink-0"><i class="fas fa-check w-4 h-4"></i></span>
-                                <span>No third-party advertisements</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="bg-blue-100 text-blue-700 rounded-full p-1 mr-3 flex-shrink-0"><i class="fas fa-check w-4 h-4"></i></span>
-                                <span>No in-app purchases or paywalls</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-xl text-blue-700 mb-3"><i class="fas fa-brain mr-2"></i>Educational Value</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <span class="bg-green-100 text-green-700 rounded-full p-1 mr-3 flex-shrink-0"><i class="fas fa-check w-4 h-4"></i></span>
-                                <span>Develops problem-solving skills</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="bg-green-100 text-green-700 rounded-full p-1 mr-3 flex-shrink-0"><i class="fas fa-check w-4 h-4"></i></span>
-                                <span>Encourages creativity and imagination</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="bg-green-100 text-green-700 rounded-full p-1 mr-3 flex-shrink-0"><i class="fas fa-check w-4 h-4"></i></span>
-                                <span>Teaches basic math and reading concepts</span>
-                            </li>
-                        </ul>
+            <!-- Why Play Our Mickey Mouse Games? -->
+            <section id="why-play" class="mb-12">
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                    <h2 class="text-2xl md:text-3xl font-bold text-pink-600 mb-6 text-center">Why Play Our Mickey Mouse Games?</h2>
+                    <div class="grid md:grid-cols-2 gap-6 text-gray-700 text-base md:text-lg">
+                        <div class="bg-pink-50 p-4 rounded-lg border border-pink-200">
+                            <h3 class="font-bold text-xl text-pink-700 mb-2"><i class="fas fa-smile mr-2"></i>Pure Fun & Entertainment</h3>
+                            <p>Our games are designed to be incredibly fun! Kids love joining Mickey and his friends on exciting adventures, solving puzzles, and celebrating their successes. It's all about bringing smiles and laughter.</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                            <h3 class="font-bold text-xl text-green-700 mb-2"><i class="fas fa-graduation-cap mr-2"></i>Educational Value</h3>
+                            <p>Many of our Mickey Mouse Clubhouse games subtly incorporate learning. Children can practice counting, letter recognition, shape identification, and problem-solving skills in a playful, no-pressure environment.</p>
+                        </div>
+                        <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                            <h3 class="font-bold text-xl text-yellow-700 mb-2"><i class="fas fa-check-circle mr-2"></i>Safe & Kid-Friendly</h3>
+                            <p>We prioritize a safe online space for children. All games are curated to be age-appropriate, free from inappropriate content, and easy for young ones to navigate.</p>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                            <h3 class="font-bold text-xl text-purple-700 mb-2"><i class="fas fa-desktop mr-2"></i>Free & Accessible</h3>
+                            <p>Enjoy unlimited access to all our Mickey Mouse games completely free! No downloads or installations are required – just click and play directly in your browser on any device.</p>
+                        </div>
                     </div>
                 </div>
+            </section>
+
+            <!-- How to Play Games on Our Site -->
+            <section id="how-to-play" class="mb-12">
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                    <h2 class="text-2xl md:text-3xl font-bold text-teal-600 mb-6 text-center">How to Play Games on Our Site</h2>
+                    <div class="grid md:grid-cols-3 gap-6 text-gray-700 text-base md:text-lg">
+                        <div class="text-center">
+                            <div class="bg-teal-500 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 text-2xl font-bold">1</div>
+                            <h3 class="font-bold text-xl mb-2">Browse & Discover</h3>
+                            <p>Explore our homepage, game categories, or use the search (if available) to find a game that looks fun. Read the descriptions and look at the images to get an idea of the game.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-teal-500 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 text-2xl font-bold">2</div>
+                            <h3 class="font-bold text-xl mb-2">Click to Play</h3>
+                            <p>Once you've found a game you like, simply click on the "Play Now" button or the game image. The game will load directly in the main game area on the page.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-teal-500 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 text-2xl font-bold">3</div>
+                            <h3 class="font-bold text-xl mb-2">Enjoy the Fun!</h3>
+                            <p>That's it! No downloads, no sign-ups needed. Just pure, simple fun. Most games use mouse clicks or simple keyboard controls, perfect for little hands.</p>
+                        </div>
+                    </div>
+                     <p class="text-center mt-6 text-gray-600">
+                        If a game doesn't load correctly, try clicking the "Reload" button near the featured game, or refresh your browser page.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Q&A Section -->
+            <section id="faq" class="mb-12">
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-600 mb-6 text-center">Frequently Asked Questions (FAQ)</h2>
+                    <div class="space-y-6">
+                        <!-- Question 1 -->
+                        <details class="group bg-indigo-50 p-4 rounded-lg border border-indigo-200 cursor-pointer">
+                            <summary class="font-semibold text-lg text-indigo-700 flex justify-between items-center">
+                                Are all the games on this site free to play?
+                                <span class="transform transition-transform duration-300 group-open:rotate-180">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </summary>
+                            <p class="mt-3 text-gray-700">
+                                Yes, absolutely! All Mickey Mouse Clubhouse games and other Disney Junior games featured on our website are completely free to play. No subscriptions, no hidden fees.
+                            </p>
+                        </details>
+                        <!-- Question 2 -->
+                        <details class="group bg-indigo-50 p-4 rounded-lg border border-indigo-200 cursor-pointer">
+                            <summary class="font-semibold text-lg text-indigo-700 flex justify-between items-center">
+                                Do I need to download anything to play these games?
+                                <span class="transform transition-transform duration-300 group-open:rotate-180">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </summary>
+                            <p class="mt-3 text-gray-700">
+                                No downloads or installations are required. All games run directly in your web browser (like Chrome, Firefox, Safari, Edge) on your computer, tablet, or smartphone.
+                            </p>
+                        </details>
+                        <!-- Question 3 -->
+                        <details class="group bg-indigo-50 p-4 rounded-lg border border-indigo-200 cursor-pointer">
+                            <summary class="font-semibold text-lg text-indigo-700 flex justify-between items-center">
+                                Are these games safe for young children?
+                                <span class="transform transition-transform duration-300 group-open:rotate-180">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </summary>
+                            <p class="mt-3 text-gray-700">
+                                Yes, we strive to provide a safe and kid-friendly environment. The games are curated to be age-appropriate for preschoolers and young children, focusing on fun and learning.
+                            </p>
+                        </details>
+                        <!-- Question 4 -->
+                        <details class="group bg-indigo-50 p-4 rounded-lg border border-indigo-200 cursor-pointer">
+                            <summary class="font-semibold text-lg text-indigo-700 flex justify-between items-center">
+                                What kind of educational benefits do these games offer?
+                                <span class="transform transition-transform duration-300 group-open:rotate-180">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </summary>
+                            <p class="mt-3 text-gray-700">
+                                Many games help develop early learning skills such as number and letter recognition, color and shape identification, problem-solving, memory, and hand-eye coordination, all in a fun and engaging way.
+                            </p>
+                        </details>
+                    </div>
+                </div>
+            </section>
+<!-- Popular Games Section -->
+<section id="popular-games" class="mb-12">
+    <div class="bg-white rounded-xl shadow-lg p-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-6 text-center">Popular Games</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Popular Game Card Example 1 (Replace with actual game data) -->
+            <div class="game-card relative border rounded-lg shadow-md overflow-hidden group">
+                <!-- Replace with actual image -->
+                <div class="w-full h-48 bg-gray-300 flex items-center justify-center text-gray-500 carousel-game-container">
+                    <img src="https://placehold.co/400x225/E8117F/white?text=Popular+Game+1&font=comicneue" alt="Popular Game 1" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-xl mb-2 truncate">Popular Game Title 1</h3>
+                    <p class="text-gray-600 text-sm mb-3 h-16 overflow-hidden">A brief and exciting description of this very popular game that kids love to play.</p>
+                    <button onclick="playGame('https://www.example.com/popular-game-1', this)" class="block w-full text-center bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition-colors">
+                        Play Now
+                    </button>
+                </div>
+                <div class="age-badge">3+</div>
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity play-button">
+                    <i class="fas fa-play-circle fa-5x text-white"></i>
+                </div>
             </div>
-        </section>
+
+            <!-- Popular Game Card Example 2 (Replace with actual game data) -->
+            <div class="game-card relative border rounded-lg shadow-md overflow-hidden group">
+                <div class="w-full h-48 bg-gray-300 flex items-center justify-center text-gray-500 carousel-game-container">
+                    <img src="https://placehold.co/400x225/1E3A8A/white?text=Popular+Game+2&font=comicneue" alt="Popular Game 2" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-xl mb-2 truncate">Another Hit Game</h3>
+                    <p class="text-gray-600 text-sm mb-3 h-16 overflow-hidden">This game is a fan favorite, offering hours of fun and learning for young children.</p>
+                    <button onclick="playGame('https://www.example.com/popular-game-2', this)" class="block w-full text-center bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition-colors">
+                        Play Now
+                    </button>
+                </div>
+                <div class="age-badge">4+</div>
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity play-button">
+                    <i class="fas fa-play-circle fa-5x text-white"></i>
+                </div>
+            </div>
+
+            <!-- Popular Game Card Example 3 (Replace with actual game data) -->
+            <div class="game-card relative border rounded-lg shadow-md overflow-hidden group">
+                 <div class="w-full h-48 bg-gray-300 flex items-center justify-center text-gray-500 carousel-game-container">
+                    <img src="https://placehold.co/400x225/F43F5E/white?text=Popular+Game+3&font=comicneue" alt="Popular Game 3" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-xl mb-2 truncate">Top Rated Fun</h3>
+                    <p class="text-gray-600 text-sm mb-3 h-16 overflow-hidden">Kids can't get enough of this engaging and interactive top-rated game experience.</p>
+                    <button onclick="playGame('https://www.example.com/popular-game-3', this)" class="block w-full text-center bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition-colors">
+                        Play Now
+                    </button>
+                </div>
+                <div class="age-badge">3+</div>
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity play-button">
+                    <i class="fas fa-play-circle fa-5x text-white"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Browse by Category Section -->
+<section id="game-categories" class="mb-12">
+    <div class="bg-white rounded-xl shadow-lg p-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-6 text-center">Explore by Category</h2>
+        <div class="flex flex-wrap justify-center gap-4">
+            <!-- Category Link Example (Replace with actual categories and links) -->
+            <a href="/preschool-games.html" class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-bold py-3 px-6 rounded-full text-lg transition-colors shadow-md">
+                Preschool Fun
+            </a>
+            <a href="/mickey-mouse-games.html#puzzles" class="bg-green-400 hover:bg-green-500 text-white font-bold py-3 px-6 rounded-full text-lg transition-colors shadow-md">
+                Puzzle Games
+            </a>
+            <a href="/disney-junior-games.html#adventure" class="bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-full text-lg transition-colors shadow-md">
+                Adventure Time
+            </a>
+            <a href="#learning" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full text-lg transition-colors shadow-md">
+                Learning Games
+            </a>
+             <a href="#coloring" class="bg-pink-400 hover:bg-pink-500 text-white font-bold py-3 px-6 rounded-full text-lg transition-colors shadow-md">
+                Coloring Pages
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- User Reviews Section -->
+<section id="user-reviews" class="mb-12">
+    <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-amber-600 mb-8 text-center">What Our Players Say</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Review Card 1 -->
+            <div class="bg-amber-50 p-6 rounded-lg border border-amber-200 shadow-sm flex flex-col">
+                <div class="flex items-center mb-3">
+                    <img src="https://placehold.co/50x50/FFC107/FFFFFF?text=MF&font=roboto" alt="User Avatar" class="w-12 h-12 rounded-full mr-3">
+                    <div>
+                        <h4 class="font-bold text-lg text-amber-700">MickeyFan_88</h4>
+                        <div class="text-yellow-500">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-700 text-sm italic">"My kids absolutely ADORE these Mickey Mouse Clubhouse games! They spend hours playing and learning. The variety is fantastic, and it's all free. Highly recommend!"</p>
+                <p class="text-xs text-gray-500 mt-auto pt-2">Reviewed: March 10, 2024</p>
+            </div>
+
+            <!-- Review Card 2 -->
+            <div class="bg-amber-50 p-6 rounded-lg border border-amber-200 shadow-sm flex flex-col">
+                <div class="flex items-center mb-3">
+                    <img src="https://placehold.co/50x50/4CAF50/FFFFFF?text=PG&font=roboto" alt="User Avatar" class="w-12 h-12 rounded-full mr-3">
+                    <div>
+                        <h4 class="font-bold text-lg text-amber-700">PreschoolParent</h4>
+                        <div class="text-yellow-500">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-700 text-sm italic">"A wonderful collection of Disney Junior games. It's great to find a safe and ad-free place for my toddler to play online. The games are engaging and educational."</p>
+                <p class="text-xs text-gray-500 mt-auto pt-2">Reviewed: March 8, 2024</p>
+            </div>
+
+            <!-- Review Card 3 -->
+            <div class="bg-amber-50 p-6 rounded-lg border border-amber-200 shadow-sm flex flex-col md:col-span-2 lg:col-span-1"> {/* Adjusts span for different screen sizes if needed */}
+                <div class="flex items-center mb-3">
+                    <img src="https://placehold.co/50x50/2196F3/FFFFFF?text=DJ&font=roboto" alt="User Avatar" class="w-12 h-12 rounded-full mr-3">
+                    <div>
+                        <h4 class="font-bold text-lg text-amber-700">DisneyJuniorFan</h4>
+                        <div class="text-yellow-500">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-700 text-sm italic">"So many fun games in one place! My favorite is the 'Robot Roundup'. Easy to navigate and the games load quickly. Keep up the great work!"</p>
+                <p class="text-xs text-gray-500 mt-auto pt-2">Reviewed: March 5, 2024</p>
+            </div>
+        </div>
+        <p class="text-center text-gray-600 mt-8">
+            Want to share your experience? <a href="contact.html" class="text-blue-600 hover:underline">Contact us</a>!
+        </p>
+    </div>
+</section>
+
+
+<!-- About/Intro Text -->
+<section id="about-us" class="mb-12 bg-white rounded-xl shadow-lg p-6">
+    <div class="bg-white rounded-xl shadow-lg p-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4">Safe Gaming for Kids</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="font-bold text-xl text-blue-700 mb-3"><i class="fas fa-shield-alt mr-2"></i>Parental Controls</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <span class="bg-blue-100 text-blue-700 rounded-full p-1 mr-3 flex-shrink-0"><i class="fas fa-check w-4 h-4"></i></span>
+                        <span>Timer settings to limit play sessions</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="bg-blue-100 text-blue-700 rounded-full p-1 mr-3 flex-shrink-0"><i class="fas fa-check w-4 h-4"></i></span>
+                        <span>No third-party advertisements</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="bg-blue-100 text-blue-700 rounded-full p-1 mr-3 flex-shrink-0"><i class="fas fa-check w-4 h-4"></i></span>
+                        <span>No in-app purchases or paywalls</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold text-xl text-blue-700 mb-3"><i class="fas fa-brain mr-2"></i>Educational Value</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <span class="bg-green-100 text-green-700 rounded-full p-1 mr-3 flex-shrink-0"><i class="fas fa-check w-4 h-4"></i></span>
+                        <span>Develops problem-solving skills</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="bg-green-100 text-green-700 rounded-full p-1 mr-3 flex-shrink-0"><i class="fas fa-check w-4 h-4"></i></span>
+                        <span>Encourages creativity and imagination</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="bg-green-100 text-green-700 rounded-full p-1 mr-3 flex-shrink-0"><i class="fas fa-check w-4 h-4"></i></span>
+                        <span>Teaches basic math and reading concepts</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
     </main>
 
     <!-- Footer -->
@@ -321,32 +593,23 @@
         document.getElementById('current-year').textContent = new Date().getFullYear();
         
         // Simple carousel navigation
-        document.querySelector('.carousel-next')?.addEventListener('click', function() {
+        document.querySelector('.carousel-next').addEventListener('click', function() {
             document.querySelector('.carousel').scrollBy({ left: 300, behavior: 'smooth' });
         });
         
-        document.querySelector('.carousel-prev')?.addEventListener('click', function() {
+        document.querySelector('.carousel-prev').addEventListener('click', function() {
             document.querySelector('.carousel').scrollBy({ left: -300, behavior: 'smooth' });
         });
         
-        // Enhanced GA tracking
-        function trackEvent(category, action, label) {
-            if (typeof gtag !== 'undefined') {
-                gtag('event', action, {
-                    'event_category': category,
-                    'event_label': label
+        // Track game plays in GA
+        document.querySelectorAll('.carousel-item').forEach(card => {
+            const overlay = card.querySelector('.absolute');
+            overlay.addEventListener('click', function() {
+                const gameTitle = card.querySelector('h3').textContent;
+                gtag('event', 'game_click', {
+                    'event_category': 'engagement',
+                    'event_label': gameTitle
                 });
-            }
-        }
-
-        // Track page view
-        trackEvent('engagement', 'page_view', document.title);
-        
-        // Track game interactions
-        document.querySelectorAll('.game-card, .category-card').forEach(el => {
-            el.addEventListener('click', function() {
-                const label = this.querySelector('h3')?.textContent || this.textContent.trim();
-                trackEvent('games', 'game_click', label);
             });
         });
     </script>

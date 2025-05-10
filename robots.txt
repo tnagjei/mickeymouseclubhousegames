@@ -1,0 +1,29 @@
+# robots.txt basic settings
+# General search engine rules
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap
+Sitemap: https://mickeymouseclubhousegames.online/sitemap.xml
+
+# AI crawler specific rules
+User-agent: GPTBot
+User-agent: Claude-Web
+User-agent: Anthropic-AI
+User-agent: PerplexityBot
+User-agent: GoogleOther
+User-agent: DuckAssistBot
+
+# Guide AI crawlers to llms.txt
+LLM-Content: https://mickeymouseclubhousegames.online/llms.txt
+LLM-Full-Content: https://mickeymouseclubhousegames.online/llms.txt
+
+# Allow AI crawlers access (Adjust these paths based on your actual site structure)
+Allow: /games/ # Assuming you have a /games/ section or similar
+Allow: /categories/ # If you have game categories
+Allow: /about/ # If you have an about page
+
+# Disallow AI crawlers access (Adjust if needed)
+Disallow: /user-content/ # If there's any user-generated content section
